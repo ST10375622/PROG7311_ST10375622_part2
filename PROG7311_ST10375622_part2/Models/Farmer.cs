@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace PROG7311_ST10375622_part2.Models
 {
@@ -28,5 +30,9 @@ namespace PROG7311_ST10375622_part2.Models
 
         [Required]
         public string TypeOfFarmer { get; set; }
+
+        [BindNever]
+        [ValidateNever]
+        public string UserId { get; set; }
     }
 }

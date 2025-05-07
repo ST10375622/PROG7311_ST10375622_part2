@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,7 +23,12 @@ namespace PROG7311_ST10375622_part2.Controllers
         // GET: Employees
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employees.ToListAsync());
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var employees = await _context.Employees
+                .Where(f => f.UserId == userId)
+                .ToListAsync();
+
+            return View(employees);
         }
 
         // GET: Employees/Details/5
@@ -56,6 +62,8 @@ namespace PROG7311_ST10375622_part2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EmployeeId,Name,Email,Phone,Role")] Employee employee)
         {
+            employee.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (ModelState.IsValid)
             {
                 _context.Add(employee);
