@@ -12,5 +12,7 @@ namespace PROG7311_ST10375622_part2.Data
         }
 
         public DbSet<Farmer> Farmers { get; set; } = default!;
+
+        public DbSet<Employee> Employees { get; set; } = default!;
     }
 }
