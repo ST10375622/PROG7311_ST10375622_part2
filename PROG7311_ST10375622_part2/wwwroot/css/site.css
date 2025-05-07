@@ -18,9 +18,72 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: #E8F5E9;
 }
 
+
+h1 {
+    color: #2E7D32;
+    font-family: serif;
+}
+
+h2 {
+    color: #66BB6A;
+    font-family: serif;
+}
+
+button {
+    background: #66BB6A;
+    font-family: sans-serif;
+    font-weight: 700;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: ease-in
+}
+
+    button:hover {
+        background: #2E7D32;
+        transform: scale(1.05);
+    }
+
+    button:active {
+        background-color: #1B5E20;
+        transform: scale(0.98);
+    }
+
+p {
+    color: #263238;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+img {
+    width: 500px;
+    height: auto;
+    box-shadow: 0 4px 12px rgb(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+a {
+    font-family: sans-serif;
+    color: #2E7D32;
+    text-decoration: none;
+    transition: ease;
+}
+
+    a:hover {
+        color: #1B5E20;
+        border-bottom: 2px solid #66BB6A;
+    }
+
+    a:visited {
+        color: #388E3C;
+    } 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;

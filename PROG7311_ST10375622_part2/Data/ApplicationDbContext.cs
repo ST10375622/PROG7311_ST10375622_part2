@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PROG7311_ST10375622_part2.Models;
 
 namespace PROG7311_ST10375622_part2.Data
 {
@@ -9,5 +10,7 @@ namespace PROG7311_ST10375622_part2.Data
             : base(options)
         {
         }
+
+        public DbSet<Farmer> Farmers { get; set; } = default!;
     }
 }
