@@ -69,8 +69,17 @@ namespace PROG7311_ST10375622_part2.Controllers
                 
                 _context.Add(farmer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                if (User.IsInRole("Farmer"))
+                {
+                    return RedirectToAction(nameof(Index));
+                } else if (User.IsInRole("Employee"))
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+               
             }
+
             return View(farmer);
         }
 
@@ -161,6 +170,12 @@ namespace PROG7311_ST10375622_part2.Controllers
         private bool FarmerExists(int id)
         {
             return _context.Farmers.Any(e => e.FarmerId == id);
+        }
+
+        public async Task<IActionResult> PublicList()
+        {
+            var farmers = await _context.Farmers.ToListAsync();
+            return View(farmers);
         }
     }
 }

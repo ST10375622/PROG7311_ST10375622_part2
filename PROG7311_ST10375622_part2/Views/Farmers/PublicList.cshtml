@@ -1,0 +1,78 @@
+﻿@model IEnumerable<PROG7311_ST10375622_part2.Models.Farmer>
+
+@{
+	ViewData["Titile"] = "Meet our Farmers";
+}
+
+<h1 style="text-align: center">Meet Our Farmers</h1>
+
+<div class="row">
+	@foreach (var farmer in Model)
+	{
+		<div class="col-md-4 mb-4">
+			<div class="card h-100 shadow-sm" style="background-color: #66BB6A">
+				<div class="card-body">
+					<h5 class="card-title">@farmer.Name</h5>
+					<p class="card-text"><strong>Type:</strong> @farmer.TypeOfFarmer</p>
+					<p class="card-text"><strong>Location:</strong> @farmer.Location</p>
+					<p class="card-text">@farmer.Description</p>
+				</div>
+			</div>
+		</div>
+	}
+</div>
+
+<br />
+<br />
+<hr/>
+<h1 style="text-align: center">Grant Subsides and Oppertunities for green initiatives</h1>
+<br />
+<br />
+<p>
+	<a href="https://www.dffe.gov.za/GreenFund?" target="_blank">Green Fund</a>
+	<br />
+	<b>Green fund - Department of Forestry, Fisheries and the Environment</b>
+	<br />
+	South Africa's shift to a low-carbon, resource-efficient, and climate-resilient growth path is supported by the Green Fund.
+	It provides catalytic funding for creative green projects that support the creation of jobs and the fight against poverty.
+</p>
+
+<br />
+<br />
+<p>
+	<a href="https://www.wwf.org.za/our_work/trusts/the_wwf_nedbank_green_trust/" target="_blank">WWF</a>
+	<br />
+	<b>WWF Nedbank Green Trust</b>
+	<br />
+	This trust provides funding for creative initiatives that support sustainable resource use and environmental conservation in line with WWF South Africa's agenda.
+	<br />
+	You can apply for funding here: <a href="https://www.greentrust.org.za/funding/" target="_blank">Link to apply for funding</a>
+</p>
+
+<br />
+<br />
+<p>
+	<a href="https://www.greenagri.org.za/funding-and-incentives/government-and-developmental-institutes-financing" target="_blank">GreenAgri</a>
+	<br />
+	<b>GreenAgri - Funding and Incentives</b>
+	<br />
+	GreenAgri provides a comprehensive list of funding opportunities for agribusinesses. 
+	They focus on resource efficiency and substainable practices
+	<br />
+	Some of the Notable progarms include:
+	<ol>
+		<li>AgriBEE Fund</li>
+		<li>Micro Agricultural Financial Institutions of South Africa</li>
+		<li>Aquaculture Development and Enhancement Programme</li>
+	</ol>
+</p>
+
+<br />
+<br />
+<p>
+	<a href="https://www.foodformzansi.co.za/10-funding-opportunities-for-farmers/" target="_blank">Food for Mzansi</a>
+	<br />
+	<b>Food for Mzansi - Funding Oppurtunities for farmers</b>
+	<br />
+	Food for Mzansi highlights various funding oppertunities such as Intergrated Food Security and Nutrition Programme and Umsobomvu Youth Fund
+</p>
