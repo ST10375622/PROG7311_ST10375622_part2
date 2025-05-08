@@ -23,18 +23,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Farming Hub</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Market Place</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Farmers" asp-action="PublicList">Oppertunities</a>
-                        </li
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Resources" asp-action="Index">Resources</a>
-                        </li>
+                        @if (User.IsInRole("Farmer") || User.IsInRole("Employee"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Market Place</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Farmers" asp-action="PublicList">Oppertunities</a>
+                            </li
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Resources" asp-action="Index">Resources</a>
+                            </li>
+                        }
                         @if (User.IsInRole("Farmer"))
                         {
                             <li class="nav-item">
