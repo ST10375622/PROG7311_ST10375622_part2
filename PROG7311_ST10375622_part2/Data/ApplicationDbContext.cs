@@ -17,6 +17,9 @@ namespace PROG7311_ST10375622_part2.Data
 
         public DbSet<Product> Products { get; set; } = default!;
 
+        //Prepopulating data for demonstartion purposes
+        //Referencing
+        //Microsoft Learn (2025).
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

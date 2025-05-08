@@ -10,18 +10,17 @@ namespace PROG7311_ST10375622_part2.Models
         [Key]
         public int EmployeeId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        //validation checks on email to ensure that user enter their email
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email address")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Phone Number is required")]
         public string Phone { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Employee Role is required")]
         public string Role { get; set; }
 
         [BindNever]

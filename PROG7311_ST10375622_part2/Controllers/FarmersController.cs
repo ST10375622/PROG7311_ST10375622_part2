@@ -21,6 +21,7 @@ namespace PROG7311_ST10375622_part2.Controllers
         }
 
         // GET: Farmers
+        //Ensures that the farmer can only see their own data
         public async Task<IActionResult> Index()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -58,10 +59,12 @@ namespace PROG7311_ST10375622_part2.Controllers
         // POST: Farmers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //when the farmer creates their profile the userId that is a foreign key will be populated based on who is logged in
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FarmerId,Name,Description,Email,Location,Phone,TypeOfFarmer")] Farmer farmer)
         {   
+            //sets the userId to the currently logged in users Id
             farmer.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (ModelState.IsValid)

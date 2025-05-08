@@ -9,16 +9,16 @@ namespace PROG7311_ST10375622_part2.Models
         [Key]
         public int ProductId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string ProductName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Category is required")]
         public string Category {  get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Description  is required")]
         public string Description { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Date is required")]
         [DataType(DataType.Date)]
         public DateTime ProductionDate { get; set; }
 
