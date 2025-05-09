@@ -73,5 +73,5 @@ I made use of the SQL Server Database. The reason i picked this database is that
 4. The other functionalities and feaures can be seen by all the individuals.
 
 ## Youtube Link :
-1. Link to the demo video: 
+1. Link to the demo video: <https://youtu.be/rHaMxQqJ0o4?si=soIzMOh_30yu8mRa>
 
