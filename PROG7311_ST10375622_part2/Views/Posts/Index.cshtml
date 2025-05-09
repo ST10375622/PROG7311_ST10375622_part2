@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PROG7311_ST10375622_part2.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Posts Dashboard</h1>
+
+<p>
+    <a asp-action="Create">Create New Post</a>
+</p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Content:</strong> @Html.DisplayFor(modelItem => item.Contenet)</p>
+                    <p><strong>Created At:</strong> @Html.DisplayFor(modelItem => item.CreatedAt, "{0:MM/dd/yyyy}")</p>
+                    <p><strong>Category:</strong> @Html.DisplayFor(modelItem => item.category)</p>
+                    <p><strong>Farmer:</strong> @Html.DisplayFor(modelItem => item.Farmer.Name)</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Details" asp-route-id="@item.PostId" class="btn btn-sm btn-info">Make a comment</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+</div>

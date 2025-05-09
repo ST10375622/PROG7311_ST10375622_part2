@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PROG7311_ST10375622_part2.Data;
 
@@ -11,9 +12,11 @@ using PROG7311_ST10375622_part2.Data;
 namespace PROG7311_ST10375622_part2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250509124552_Error Handling")]
+    partial class ErrorHandling
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -253,16 +256,6 @@ namespace PROG7311_ST10375622_part2.Data.Migrations
                     b.HasIndex("PostId");
 
                     b.ToTable("Comments");
-
-                    b.HasData(
-                        new
-                        {
-                            CommentId = 7,
-                            Content = "Thank you for this tip. It was really helpful. I will try it during composting season.",
-                            CreatedAt = new DateTime(2025, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FarmerId = 2,
-                            PostId = 7
-                        });
                 });
 
             modelBuilder.Entity("PROG7311_ST10375622_part2.Models.Employee", b =>
@@ -396,17 +389,6 @@ namespace PROG7311_ST10375622_part2.Data.Migrations
                     b.HasIndex("FarmerId");
 
                     b.ToTable("Posts");
-
-                    b.HasData(
-                        new
-                        {
-                            PostId = 7,
-                            Contenet = "I use compost and crop rotation to Maintain healthy soil.",
-                            CreatedAt = new DateTime(2025, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FarmerId = 7,
-                            Title = "Tips for healthy Soil",
-                            category = "General"
-                        });
                 });
 
             modelBuilder.Entity("PROG7311_ST10375622_part2.Models.Product", b =>
@@ -449,24 +431,6 @@ namespace PROG7311_ST10375622_part2.Data.Migrations
                             Description = "The best oranges in the area",
                             FarmerId = 7,
                             ProductName = "oranges",
-                            ProductionDate = new DateTime(2025, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            ProductId = 6,
-                            Category = "Fruits",
-                            Description = "The season is about to end",
-                            FarmerId = 3,
-                            ProductName = "Watermelons",
-                            ProductionDate = new DateTime(2025, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            ProductId = 7,
-                            Category = "Livestock",
-                            Description = "Sourced out for their meat",
-                            FarmerId = 1,
-                            ProductName = "Pigs",
                             ProductionDate = new DateTime(2025, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

@@ -1,0 +1,29 @@
+﻿@model	FarmerDashboardViewModel
+
+<h1>Welcome To The Dashboard</h1>
+
+
+<h3>Recent Posts</h3>
+<a href="@Url.Action("Create", "Posts")" class="btn btn-primary">New Post</a>
+
+<div class="row">
+
+	@foreach (var post in Model.Posts)
+	{
+		<div class="col-md-6 col-lg-4 mb-4">
+			<div class="card h-100">
+				<div class="card-body">
+					<h5 class="card-title">@post.Title</h5>
+					<h6 class="card-subtitle text-muted mb-2">@post.category</h6>
+					<p class="card-text">@post.Contenet</p>
+				</div>
+				<div class="card-footer text-muted">
+					Posted on @post.CreatedAt.ToString("yyyy-MM-dd")
+					</div>
+				</div>
+			</div>
+	}
+
+
+
+</div>
