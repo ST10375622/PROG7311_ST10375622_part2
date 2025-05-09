@@ -83,7 +83,7 @@ namespace PROG7311_ST10375622_part2.Controllers
 
                 _context.Add(post);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Posts");
             }
             return View(post);
         }
