@@ -8,6 +8,7 @@
 - [Installation](#installation)
 - [Build and Run](#build-and-run)
 - [User Roles](#user-roles)
+- [Youtube Link](Youtube-Link)
 
 ## Overview
 
@@ -37,21 +38,40 @@ I made use of the SQL Server Database. The reason i picked this database is that
 
 ## Installation
 
-1. **Clone the repository:**
-2.   - To do this you need to copy this repository Link.
-     - Then go to your Visual Studio. (If you do not have it make sure that you install it)
-     - Ensure that your visual studio is updated and has the latest version
-     - you will then clone this repository.
-3. Ensure that you have the following installed: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.SqlServer.,Microsoft.EntityFrameworkCore.Tools
-4. you will then run the project to ensure that it is working
+1. **Clone the repository: <https://github.com/ST10375622/PROG7311_ST10375622_part2.git> **
+2.  - Go to Visual Studio. (If you do not have it make sure that you install it)
+    - Ensure that your visual studio is updated
+     - Click on "Clone a repository"
+     - You will then paste this link in Repository location
+     - Then you will click on clone
+3. Ensure that you have the following packages installed:
+   - Microsoft.EntityFrameworkCore,
+   - Microsoft.EntityFrameworkCore.SqlServer,
+   -  Microsoft.EntityFrameworkCore.SqlServer.,
+   -  Microsoft.EntityFrameworkCore.Tools
+   -  Microsoft.visualstudio.web.codegeneration.design
+   -  Microsoft.aspnetcore.identity.ui
+   -  Microsoft.aspnetcore.identity.entityframeworkcore
+   -  Microsoft.aspnetcore.diagnostics.entityframeworkcore
+4. To Install these you will do the following
+   - Go to the Tools tab
+   - Look for nuGet Package Manager
+   - Click on Manage NuGet Packages for solution
+   - Then you ill go to Browse
+   - Look for all the packages and install them.
 
 ## Build and Run
-1. Ensure that the project has been cloned
-2. you will then go to the top of your visual studio and run the project using the green play buttons
+1. Clean the Build
+ - Go to Build
+ - Go to clean solution
+2. Once that is done go to the Green play button and run the website (Ctrl + F5 for the shortcut)
 
 ## User Roles
 1. The main users in this application are the Farmers and the Employees
 2. The Farmers will be able to add product  to their profile.
 3. The Employees will add new farmer profiles, view products from a specific farmer
 4. The other functionalities and feaures can be seen by all the individuals.
+
+## Youtube Link :
+1. Link to the demo video: 
 
